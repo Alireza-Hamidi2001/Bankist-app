@@ -211,6 +211,7 @@ body {
   width: 75%;
   margin: 5rem auto;
   height: auto;
+  display: none;
 }
 @media only screen and (max-width: 75em) {
   .app__container {
@@ -266,6 +267,10 @@ body {
     grid-template-rows: max-content max-content repeat(2, 1fr);
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+.show {
+  display: block !important;
 }
 
 .box {

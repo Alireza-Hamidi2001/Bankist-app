@@ -5,7 +5,7 @@
         width: 75%;
         margin: 5rem auto;
         height: auto;
-        // display: none;
+        display: none;
 
         @include mixin.respond (tab-land) {
             width: 80%;
@@ -67,4 +67,8 @@
             grid-template-columns: repeat(2, 1fr);
         }
     }
+}
+
+.show {
+    display: block !important;
 }

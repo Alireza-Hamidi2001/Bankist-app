@@ -36,6 +36,8 @@ const form__btn = document.querySelector(".header__login");
 
 const welcomeEl = document.querySelector(".welcome");
 const balance__money = document.querySelector(".app__money");
+
+const app__container = document.querySelector(".app__container");
 // TRANSFER
 const transfer__to = document.querySelector(".transfer__input-to");
 const transfer__amount = document.querySelector(".transfer__input-amount");
@@ -101,10 +103,11 @@ const login = (username, pin) => {
     );
 
     selectedAccount?.pin === pin
-        ? (welcomeEl.innerHTML = `<svg class="icon__bubble">
+        ? ((welcomeEl.innerHTML = `<svg class="icon__bubble">
                 <use xlink:href="./SVGs/sprite.svg#icon-bubbles2"></use>
             </svg>
-            <p>Welcome back, ${selectedAccount.owner.split(" ")[0]} .</p>`)
+            <p>Welcome back, ${selectedAccount.owner.split(" ")[0]} .</p>`),
+          app__container.classList.add("show"))
         : (welcomeEl.innerHTML = `<svg class="icon__bubble">
                 <use xlink:href="./SVGs/sprite.svg#icon-bubbles2"></use>
             </svg>
