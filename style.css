@@ -1,0 +1,620 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: inherit;
+}
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 37.5%;
+  }
+}
+
+body {
+  font-family: "Coiny";
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+@font-face {
+  font-family: "Monoton";
+  src: url("../../src/fonts/Monoton/Monoton-Regular.eot") format("eot");
+  src: url("../../src/fonts/Monoton/Monoton-Regular.ttf") format("ttf");
+  src: url("../../src/fonts/Monoton/Monoton-Regular.woff") format("woff");
+  src: url("../../src/fonts/Monoton/Monoton-Regular.woff2") format("woff2");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Caveat";
+  src: url("../../src/fonts/Caveat/Caveat-Regular.eot") format("eot");
+  src: url("../../src/fonts/Caveat/Caveat-Regular.ttf") format("ttf");
+  src: url("../../src/fonts/Caveat/Caveat-Regular.woff") format("woff");
+  font-style: normal;
+}
+@font-face {
+  font-family: "ComicNeue";
+  src: url("../../src/fonts/ComicNeue/ComicNeue-Regular.eot") format("eot");
+  src: url("../../src/fonts/ComicNeue/ComicNeue-Regular.ttf") format("ttf");
+  src: url("../../src/fonts/ComicNeue/ComicNeue-Regular.woff2") format("woff2");
+  font-style: normal;
+}
+@font-face {
+  font-family: "open-sans";
+  src: url("../../src/fonts/open-sans/OpenSans-Regular.eot") format("eot");
+  src: url("../../src/fonts/open-sans/OpenSans-Regular.ttf") format("ttf");
+  src: url("../../src/fonts/open-sans/OpenSans-Regular.woff") format("woff");
+  font-style: normal;
+}
+@font-face {
+  font-family: "KottaOne";
+  src: url("../../src/fonts/KottaOne/KottaOne-Regular.eot") format("eot");
+  src: url("../../src/fonts/KottaOne/KottaOne-Regular.ttf") format("ttf");
+  src: url("../../src/fonts/KottaOne/KottaOne-Regular.woff2") format("woff2");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Coiny";
+  src: url("../../src/fonts/demo/Coiny/Coiny-Regular.eot") format("eot");
+  src: url("../../src/fonts/demo/Coiny/Coiny-Regular.ttf") format("ttf");
+  src: url("../../src/fonts/demo/Coiny/Coiny-Regular.woff") format("woff");
+  src: url("../../src/fonts/demo/Coiny/Coiny-Regular.woff2") format("woff2");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Courgette";
+  src: url("../../src/fonts/demo/Courgette/Courgette-Regular.eot") format("eot");
+  src: url("../../src/fonts/demo/Courgette/Courgette-Regular.ttf") format("ttf");
+  src: url("../../src/fonts/demo/Courgette/Courgette-Regular.woff") format("woff");
+  src: url("../../src/fonts/demo/Courgette/Courgette-Regular.woff2") format("woff2");
+  font-style: normal;
+}
+@font-face {
+  font-family: "HomemadeApple";
+  src: url("../../src/fonts/demo/Homemade_Apple/HomemadeApple-Regular.eot") format("eot");
+  src: url("../../src/fonts/demo/Homemade_Apple/HomemadeApple-Regular.ttf") format("ttf");
+  src: url("../../src/fonts/demo/Homemade_Apple/HomemadeApple-Regular.woff") format("woff");
+  src: url("../../src/fonts/demo/Homemade_Apple/HomemadeApple-Regular.woff2") format("woff2");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Arizonia";
+  src: url("../../src/fonts/Arizonia/Arizonia-Regular.eot") format("eot");
+  src: url("../../src/fonts/Arizonia/Arizonia-Regular.ttf") format("ttf");
+  src: url("../../src/fonts/Arizonia/Arizonia-Regular.woff") format("woff");
+  src: url("../../src/fonts/Arizonia/Arizonia-Regular.woff2") format("woff2");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Fantacy";
+  src: url("../../src/fonts/Oooh_Baby/OoohBaby-Regular.ttf") format("eot");
+  src: url("../../src/fonts/Oooh_Baby/OoohBaby-Regular.eot") format("eot");
+  src: url("../../src/fonts/Oooh_Baby/OoohBaby-Regular.woff") format("woff");
+  src: url("../../src/fonts/Oooh_Baby/OoohBaby-Regular.woff2") format("woff2");
+  font-style: normal;
+}
+@font-face {
+  font-family: "SherlockHolmes";
+  src: url("../../src/fonts/GreatVibes/GreatVibes-Regular.eot") format("eot");
+  src: url("../../src/fonts/GreatVibes/GreatVibes-Regular.ttf") format("ttf");
+  src: url("../../src/fonts/GreatVibes/GreatVibes-Regular.woff") format("woff");
+  src: url("../../src/fonts/GreatVibes/GreatVibes-Regular.woff2") format("woff2");
+  font-style: normal;
+}
+.icon__enter {
+  width: 3rem;
+  height: 3rem;
+  margin-top: 0.7rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.icon__enter:hover {
+  transform: scale(1.04);
+}
+
+.icon__calendar {
+  fill: grey;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+}
+
+.icon__books {
+  width: 4rem;
+  height: 4rem;
+  margin-right: 1rem;
+}
+
+.icon__bubble {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 1rem;
+}
+
+.icon__user,
+.icon__pin {
+  width: 2rem;
+  height: 2rem;
+  fill: #737373;
+  position: absolute;
+}
+
+.icon__user {
+  right: 18.5rem;
+}
+
+.icon__pin {
+  right: 5.5rem;
+}
+
+.icon__telegram {
+  fill: #0088CC;
+  width: 5rem;
+  height: 5rem;
+}
+
+.icon__instagram {
+  fill: url(#igGradient);
+  width: 5rem;
+  height: 5rem;
+}
+
+.icon__whatsapp {
+  fill: #25D366;
+  width: 5rem;
+  height: 5rem;
+}
+
+.welcome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  text-align: center;
+  color: black;
+  padding: 1rem 0;
+  flex: 1;
+}
+.welcome__animation {
+  animation: welcomeText 1s infinite;
+}
+@media only screen and (max-width: 37.5em) {
+  .welcome {
+    font-size: 1.8rem;
+    padding: 1rem 1rem;
+  }
+}
+
+@keyframes welcomeText {
+  0% {
+    color: black;
+  }
+  50% {
+    color: rgba(0, 0, 0, 0.4);
+  }
+  100% {
+    color: black;
+  }
+}
+.app__container {
+  width: 75%;
+  margin: 5rem auto;
+  height: auto;
+  display: none;
+}
+@media only screen and (max-width: 75em) {
+  .app__container {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .app__container {
+    width: 85%;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .app__container {
+    width: 95%;
+  }
+}
+.app__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "open-sans";
+  padding: 2rem;
+}
+.app__info {
+  font-family: "open-sans";
+}
+.app__info--1 {
+  display: flex;
+  align-items: center;
+  color: black;
+  font-weight: bold;
+  font-size: 2.8rem;
+  letter-spacing: 1px;
+  font-family: "Courgette";
+}
+.app__info--2 {
+  display: flex;
+  align-items: center;
+  color: grey;
+  font-size: 1.5rem;
+}
+.app__money {
+  font-size: 5rem;
+}
+.app__main {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1.25fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+}
+@media only screen and (max-width: 37.5em) {
+  .app__main {
+    grid-template-rows: max-content max-content repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.box {
+  min-height: 15rem;
+  max-height: 15rem;
+}
+.box__cashMovement {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  margin: 0.2rem 0;
+  border-radius: 0.5rem;
+}
+.box__status {
+  padding: 0.6rem 1.8rem;
+  border-radius: 10rem;
+  font-size: 1.5rem;
+  color: white;
+  font-family: "ComicNeue";
+}
+.box__status-deposite {
+  background-color: #3db489;
+}
+.box__status-withdraw {
+  background-color: #ea3b52;
+}
+.box__date {
+  margin-left: 4rem;
+  margin-right: auto;
+  font-family: "open-sans";
+  font-size: 1.2rem;
+  color: rgb(59, 59, 59);
+}
+.box__amount {
+  font-family: "KottaOne";
+  font-size: 2.2rem;
+}
+
+.one {
+  grid-row: 1/4;
+  grid-column: 1/2;
+  overflow: auto;
+  min-height: 50rem;
+  max-height: 50rem;
+  overflow: auto;
+}
+.one > div:nth-child(odd) {
+  background-color: rgb(234, 236, 252);
+}
+@media only screen and (max-width: 37.5em) {
+  .one {
+    grid-column: 1/3;
+    grid-row: 3/5;
+  }
+}
+
+.two {
+  padding: 2rem 4rem;
+  grid-row: 1/2;
+  background: #EAd151;
+  border-radius: 1rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .two {
+    grid-column: 1/2;
+  }
+}
+
+.three {
+  padding: 2rem 4rem;
+  grid-row: 2/3;
+  background: #2bae89;
+  border-radius: 1rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .three {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+}
+
+.four {
+  padding: 2rem 4rem;
+  grid-row: 3/4;
+  background: #ea3b52;
+  border-radius: 1rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .four {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+}
+
+.transfer__heading {
+  font-family: "Coiny";
+  font-weight: 400;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+}
+.transfer__form {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.transfer__input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.transfer__input input {
+  padding: 1rem;
+  border-radius: 1rem;
+  border: none;
+  width: 90%;
+  background: rgba(255, 243, 182, 0.5215686275);
+  transition: all 0.2s;
+}
+.transfer__input input:focus {
+  background: #fff3b6;
+  outline: none;
+}
+.transfer__paragraph {
+  font-size: 1.4rem;
+  font-family: "Courgette";
+  font-weight: 300;
+  margin-left: 1rem;
+  color: rgb(141, 107, 19);
+}
+.transfer__btn {
+  background-color: transparent;
+  padding: 0.5rem;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  align-self: self-start;
+}
+
+.loan__heading {
+  font-family: "Coiny";
+  font-weight: 400;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+}
+.loan__form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.loan__input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.loan__input input {
+  padding: 1rem;
+  border-radius: 1rem;
+  border: none;
+  width: 80%;
+  background: rgba(170, 254, 230, 0.3568627451);
+  transition: all 0.2s;
+}
+.loan__input input:focus {
+  background: #aafee6;
+  outline: none;
+}
+.loan__paragraph {
+  font-size: 1.4rem;
+  font-family: "Courgette";
+  font-weight: 300;
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+  color: rgb(18, 52, 18);
+}
+.loan__btn {
+  background-color: transparent;
+  padding: 0.5rem;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  align-self: self-start;
+}
+
+.close__heading {
+  font-family: "Coiny";
+  font-weight: 400;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+}
+.close__form {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.close__input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.close__input input {
+  padding: 1rem;
+  border-radius: 1rem;
+  border: none;
+  width: 90%;
+  background: rgba(255, 166, 178, 0.5725490196);
+  transition: all 0.2s;
+}
+.close__input input:focus {
+  background: #ffa6b2;
+  outline: none;
+}
+.close__paragraph {
+  font-size: 1.4rem;
+  font-family: "Courgette";
+  font-weight: 300;
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+  color: #700000;
+}
+.close__btn {
+  background-color: transparent;
+  padding: 0.5rem;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  align-self: self-start;
+}
+
+.summary {
+  display: flex;
+  font-size: 1.4rem;
+  gap: 2.5rem;
+  font-family: open-sans;
+  align-items: center;
+  margin: 2rem;
+}
+.summary span {
+  font-size: 2.2rem;
+  margin-left: 1rem;
+}
+.summary__span-in {
+  color: #2bae89;
+}
+.summary__span-out {
+  color: #ea3b52;
+}
+.summary__sort {
+  margin-right: auto;
+}
+.header {
+  height: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3rem;
+}
+.header__logo {
+  width: 20rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .header__logo {
+    width: 15rem;
+  }
+}
+.header__form {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+}
+.header__form > input::placeholder {
+  font-family: "ComicNeue";
+  font-size: 2rem;
+}
+.header__form > input {
+  padding: 1rem;
+  width: 100%;
+  border-radius: 1rem;
+  border: none;
+  width: 12rem;
+  margin-right: 1rem;
+}
+.header__input {
+  font-family: "ComicNeue";
+  font-size: 1.8rem;
+  font-weight: bold;
+  box-shadow: 0 0.1rem 0.5rem rgb(202, 202, 202);
+  border: none;
+  transition: all 0.2s;
+}
+.header__input:focus {
+  border: none;
+  outline: none;
+  box-shadow: 0 0.2rem 0.6rem black;
+  border: 1px solid black !important;
+}
+.header__input--user {
+  letter-spacing: 1px;
+}
+.header__login {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.warning {
+  border: 1px solid red !important;
+  box-shadow: 0 0.1rem 0.5rem red;
+}
+
+.footer {
+  background-color: rgb(234, 236, 252);
+  font-family: "Caveat";
+  padding: 3rem 6rem;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+}
+@media only screen and (max-width: 56.25em) {
+  .footer {
+    padding: 1.5rem 3rem;
+  }
+}
+.footer__copyright {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  padding: 2rem 4rem;
+  border-radius: 1rem;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 56.25em) {
+  .footer__copyright {
+    padding: 1rem 2rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .footer__copyright {
+    padding: 1rem;
+    width: 90%;
+  }
+}
+.footer__social {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin: 2rem 0;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style.css.map */

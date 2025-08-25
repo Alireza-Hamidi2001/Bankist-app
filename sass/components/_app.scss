@@ -1,0 +1,70 @@
+@use "../abstracts/mixin";
+
+.app {
+    &__container {
+        width: 75%;
+        margin: 5rem auto;
+        height: auto;
+        display: none;
+
+        @include mixin.respond (tab-land) {
+            width: 80%;
+        }
+
+        @include mixin.respond (tab-port) {
+            width: 85%;
+        }
+
+        @include mixin.respond (phone) {
+            width: 95%;
+        }
+
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: "open-sans";
+        padding: 2rem;
+    }
+
+    &__info {
+        font-family: "open-sans";
+
+        &--1 {
+            display: flex;
+            align-items: center;
+            color: black;
+            font-weight: bold;
+            font-size: 2.8rem;
+            letter-spacing: 1px;
+            font-family: "Courgette";
+        }
+
+        &--2 {
+            display: flex;
+            align-items: center;
+            color: grey;
+            font-size: 1.5rem;
+        }
+    }
+
+
+    &__money {
+        font-size: 5rem;
+    }
+
+    &__main {
+        // background-color: goldenrod;
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: 1.25fr 1fr;
+        grid-template-rows: repeat(3, 1fr);
+
+        @include mixin.respond (phone) {
+            grid-template-rows: max-content max-content repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}

@@ -1,0 +1,184 @@
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+/* ==========================================
+Single-colored icons can be modified like so:
+.icon-name {
+  font-size: 32px;
+  color: red;
+}
+========================================== */
+
+.icon-hourglass {
+  width: 0.65625em;
+}
+
+.icon-lightbulb {
+  width: 0.6875em;
+}
+
+.icon-heart {
+  width: 1.15625em;
+}
+
+.icon-sun-fill {
+  width: 0.998046875em;
+}
+
+.icon-images {
+  width: 1.125em;
+}
+
+.icon-books {
+  width: 1.125em;
+}
+
+.icon-bubbles {
+  width: 1.125em;
+}
+
+.icon-bubbles2 {
+  width: 1.125em;
+}
+
+.icon-youtube2 {
+  width: 2.5087890625em;
+}
+
+.icon-star2 {
+  width: 0.9285714285714285em;
+}
+
+.icon-star-o {
+  width: 0.9285714285714285em;
+}
+
+.icon-user2 {
+  width: 0.7142857142857142em;
+}
+
+.icon-close {
+  width: 0.7857142857142857em;
+}
+
+.icon-bookmark {
+  width: 0.7142857142857142em;
+}
+
+.icon-map-marker {
+  width: 0.5714285714285714em;
+}
+
+.icon-plane {
+  width: 0.803em;
+}
+
+.icon-facebook-square {
+  width: 0.8571428571428571em;
+}
+
+.icon-linkedin-square {
+  width: 0.8571428571428571em;
+}
+
+.icon-sign-in {
+  width: 0.8571428571428571em;
+}
+
+.icon-cloud2 {
+  width: 1.0714285714285714em;
+}
+
+.icon-linkedin {
+  width: 0.8571428571428571em;
+}
+
+.icon-cloud-download {
+  width: 1.0714285714285714em;
+}
+
+.icon-cloud-upload {
+  width: 1.0714285714285714em;
+}
+
+.icon-star-half-empty {
+  width: 0.9285714285714285em;
+}
+
+.icon-exclamation {
+  width: 0.3571428571428571em;
+}
+
+.icon-dollar {
+  width: 0.5697857142857142em;
+}
+
+.icon-instagram {
+  width: 0.8571428571428571em;
+}
+
+.icon-wheelchair {
+  width: 0.9090714285714285em;
+}
+
+.icon-automobile {
+  width: 1.1428571428571428em;
+}
+
+.icon-database {
+  width: 0.8571428571428571em;
+}
+
+.icon-bed {
+  width: 1.1428571428571428em;
+}
+
+.icon-hourglass-1 {
+  width: 0.8571428571428571em;
+}
+
+.icon-hourglass-2 {
+  width: 0.8571428571428571em;
+}
+
+.icon-map-o {
+  width: 1.1428571428571428em;
+}
+
+.icon-shopping-basket {
+  width: 1.1428571428571428em;
+}
+
+.icon-address-card-o {
+  width: 1.1428571428571428em;
+}
+
+.icon-user-o {
+  width: 0.8571428571428571em;
+}
+
+.icon-drivers-license {
+  width: 1.1428571428571428em;
+}
+
+.icon-thermometer {
+  width: 0.5714285714285714em;
+}
+
+.icon-thermometer-2 {
+  width: 0.5714285714285714em;
+}
+
+.icon-thermometer-1 {
+  width: 0.5714285714285714em;
+}
+
+.icon-snowflake-o {
+  width: 0.9285714285714285em;
+}

@@ -1,0 +1,65 @@
+.icon__enter {
+    width: 3rem;
+    height: 3rem;
+    margin-top: 0.7rem;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+        transform: scale(1.04);
+    }
+}
+
+.icon__calendar {
+    fill: grey;
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+}
+
+.icon__books {
+    width: 4rem;
+    height: 4rem;
+    margin-right: 1rem;
+
+}
+
+.icon__bubble {
+    width: 3rem;
+    height: 3rem;
+    margin-right: 1rem;
+}
+
+.icon__user,
+.icon__pin {
+    width: 2rem;
+    height: 2rem;
+    fill: #737373;
+    position: absolute;
+}
+
+.icon__user {
+    right: 18.5rem;
+}
+
+.icon__pin {
+    right: 5.5rem;
+}
+
+.icon__telegram {
+    fill: #0088CC;
+    width: 5rem;
+    height: 5rem;
+}
+
+.icon__instagram {
+    fill: url(#igGradient);
+    width: 5rem;
+    height: 5rem;
+}
+
+.icon__whatsapp {
+    fill: #25D366;
+    width: 5rem;
+    height: 5rem;
+}

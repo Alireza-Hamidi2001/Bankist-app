@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="./bank.png" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Bankist App</title>
+    </head>
+    <body>
+        <header class="header">
+            <img
+                class="header__logo"
+                src="./src/images/logo-black-orange.png"
+                alt="logo image"
+            />
+            <form action="#" class="header__form">
+                <input
+                    class="header__input header__input--user"
+                    type="text"
+                    placeholder="User"
+                />
+                <svg class="icon__user">
+                    <use xlink:href="./SVGs/sprite.svg#icon-user"></use>
+                </svg>
+                <input
+                    class="header__input header__input--pin"
+                    type="text"
+                    placeholder="PIN"
+                />
+                <svg class="icon__pin">
+                    <use xlink:href="./SVGs/sprite.svg#icon-key"></use>
+                </svg>
+                <button
+                    class="header__login btn"
+                    type="button"
+                    aria-label="btn login"
+                >
+                    <svg class="icon__enter">
+                        <use
+                            xlink:href="./SVGs/sprite.svg#icon-circle-right"
+                        ></use>
+                    </svg>
+                </button>
+            </form>
+        </header>
+        <p class="welcome"></p>
+        <!-- <main class="main"> -->
+        <div class="app__container">
+            <header class="app__header">
+                <div class="app__info">
+                    <p class="app__info--1">
+                        <svg class="icon__books">
+                            <use
+                                xlink:href="./SVGs/sprite.svg#icon-books"
+                            ></use>
+                        </svg>
+                        Current balance
+                    </p>
+                    <p class="app__info--2">
+                        <svg class="icon__calendar">
+                            <use
+                                xlink:href="./SVGs/sprite.svg#icon-calendar"
+                            ></use>
+                        </svg>
+                        As of {date} , {time}
+                    </p>
+                </div>
+                <div class="app__money"></div>
+            </header>
+            <main class="app__main">
+                <div class="box one"></div>
+
+                <div class="box two">
+                    <h2 class="transfer__heading">&#10122; Transfer money</h2>
+                    <form action="" class="transfer__form">
+                        <div class="transfer__input">
+                            <input
+                                class="transfer__input-to"
+                                type="text"
+                                aria-label="transfer to"
+                            />
+                            <p class="transfer__paragraph">
+                                &mdash; Transfer to
+                            </p>
+                        </div>
+                        <div class="transfer__input">
+                            <input
+                                class="transfer__input-amount"
+                                type="number"
+                                aria-label="amount"
+                            />
+                            <p class="transfer__paragraph">&mdash; Amount</p>
+                        </div>
+                        <button class="transfer__btn">&#10148;</button>
+                    </form>
+                </div>
+
+                <div class="box three">
+                    <h2 class="loan__heading">&#10123; Request loan</h2>
+                    <form action="" class="loan__form">
+                        <div class="loan__input">
+                            <input
+                                class="loan__input-to"
+                                type="number"
+                                aria-label="loan to"
+                            />
+                            <p class="loan__paragraph">&mdash; Amount</p>
+                        </div>
+                        <button class="loan__btn">&#10148;</button>
+                    </form>
+                </div>
+
+                <div class="box four">
+                    <h2 class="close__heading">&#10124; Close account</h2>
+                    <form action="" class="close__form">
+                        <div class="close__input">
+                            <input
+                                class="close__input-user"
+                                type="text"
+                                aria-label="confirm user"
+                            />
+                            <p class="close__paragraph">&mdash; Confirm user</p>
+                        </div>
+                        <div class="close__input">
+                            <input
+                                class="close__input-pin"
+                                type="number"
+                                aria-label="Confirm PIN"
+                            />
+                            <p class="close__paragraph">&mdash; Confirm PIN</p>
+                        </div>
+                        <button class="close__btn">&#10148;</button>
+                    </form>
+                </div>
+            </main>
+            <div class="summary">
+                <div class="summary__in">
+                    IN <span class="summary__span-in"></span>
+                </div>
+                <div class="summary__out">
+                    OUT <span class="summary__span-out"></span>
+                </div>
+                <div class="summary__interest">
+                    interest
+                    <span class="summary__span-interest"></span>
+                </div>
+                <div class="summary__sort">&darr; SORT</div>
+                <div class="summary__log-out">
+                    You logged out in <span class="summary__span-time"></span>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="footer__copyright">
+                © 2025 Banking Management System. All rights reserved.<br />
+                This project is developed for demonstration and educational
+                purposes only. Unauthorized reproduction, distribution, or use
+                of this system is strictly prohibited.
+            </div>
+            <div class="footer__social">
+                <svg class="icon__telegram">
+                    <use xlink:href="./SVGs/sprite.svg#icon-telegram"></use>
+                </svg>
+                <svg class="icon__instagram">
+                    <defs>
+                        <linearGradient
+                            id="igGradient"
+                            x1="0%"
+                            y1="0%"
+                            x2="100%"
+                            y2="100%"
+                        >
+                            <stop offset="0%" stop-color="#F58529" />
+                            <stop offset="30%" stop-color="#DD2A7B" />
+                            <stop offset="60%" stop-color="#8134AF" />
+                            <stop offset="100%" stop-color="#515BD4" />
+                        </linearGradient>
+                    </defs>
+                    <use xlink:href="./SVGs/sprite.svg#icon-instagram"></use>
+                </svg>
+                <svg class="icon__whatsapp">
+                    <use xlink:href="./SVGs/sprite.svg#icon-whatsapp"></use>
+                </svg>
+            </div>
+        </footer>
+        <!-- </main> -->
+        <script src="script.js"></script>
+    </body>
+</html>

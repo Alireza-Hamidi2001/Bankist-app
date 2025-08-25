@@ -1,0 +1,42 @@
+@use "../abstracts/mixin";
+
+.footer {
+    background-color: rgb(234, 236, 252);
+    font-family: 'Caveat';
+    padding: 3rem 6rem;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+    // position: absolute;
+    // bottom: 0;
+
+    @include mixin.respond (tab-port) {
+        padding: 1.5rem 3rem;
+    }
+
+
+    &__copyright {
+        display: flex;
+        justify-content: center;
+        width: 80%;
+        padding: 2rem 4rem;
+        border-radius: 1rem;
+        margin: 0 auto;
+
+        @include mixin.respond (tab-port) {
+            padding: 1rem 2rem;
+        }
+
+        @include mixin.respond (phone) {
+            padding: 1rem;
+            width: 90%;
+        }
+    }
+
+    &__social {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        margin: 2rem 0;
+        cursor: pointer;
+    }
+}

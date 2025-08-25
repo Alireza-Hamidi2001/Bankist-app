@@ -1,0 +1,29 @@
+.summary {
+    display: flex;
+    font-size: 1.4rem;
+    gap: 2.5rem;
+    font-family: open-sans;
+    align-items: center;
+    margin: 2rem;
+
+    & span {
+        font-size: 2.2rem;
+        margin-left: 1rem;
+    }
+
+    &__span-in {
+        color: #2bae89;
+    }
+
+    &__span-out {
+        color: #ea3b52;
+    }
+
+    &__interest {}
+
+    &__sort {
+        margin-right: auto;
+    }
+
+    &__log-out {}
+}

@@ -1,0 +1,73 @@
+@use "../abstracts/mixin";
+
+.header {
+    height: 10rem;
+    // background: rgb(225, 225, 225);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;
+
+    &__logo {
+        width: 20rem;
+        
+        @include mixin.respond (phone) {
+            width: 15rem;
+        }
+    }
+
+    &__form {
+        padding: 1rem;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        position: relative;
+
+        &>input::placeholder {
+            font-family: "ComicNeue";
+            font-size: 2rem;
+        }
+
+        &>input {
+            padding: 1rem;
+            width: 100%;
+            border-radius: 1rem;
+            border: none;
+            width: 12rem;
+            margin-right: 1rem;
+        }
+    }
+
+    &__input {
+        font-family: "ComicNeue";
+        font-size: 1.8rem;
+        font-weight: bold;
+        box-shadow: 0 0.1rem 0.5rem rgb(202, 202, 202);
+        border: none;
+        transition: all 0.2s;
+
+        &:focus {
+            border: none;
+            outline: none;
+            box-shadow: 0 0.2rem 0.6rem black;
+            border: 1px solid black !important;
+        }
+
+        &--user {
+            letter-spacing: 1px;
+        }
+
+        &--pin {}
+    }
+
+    &__login {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+.warning {
+    border: 1px solid red !important;
+    box-shadow: 0 0.1rem 0.5rem red;
+}
