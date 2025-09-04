@@ -1,31 +1,5 @@
 // Data
-const account1 = {
-    owner: "Jonas Schmedtmann",
-    movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
-    interestRate: 1.2, // %
-    pin: 1111,
-};
-
-const account2 = {
-    owner: "Alireza Hamidi",
-    movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
-    interestRate: 1.5,
-    pin: 2222,
-};
-
-const account3 = {
-    owner: "Farimah Hamidi",
-    movements: [200, -200, 340, -300, -20, 50, 400, -460],
-    interestRate: 0.7,
-    pin: 3333,
-};
-
-const account4 = {
-    owner: "Sarah Smith",
-    movements: [430, 1000, 700, 50, 90],
-    interestRate: 1,
-    pin: 4444,
-};
+import { account1, account2, account3, account4 } from "./accounts.js";
 
 const accounts = [account1, account2, account3, account4]; // [ { } , { }  , { }  ,{ } ]
 
@@ -64,27 +38,35 @@ welcomeEl.innerHTML = `
             </svg>
             <p class='welcome__animation'>Hey there . Welcome to bankist project , log in first .</p>`;
 
-balance__money.textContent = "2 555.00 $";
-summary_IN.textContent = "0000";
-summary_OUT.textContent = "1111";
-summary_INTEREST.textContent = "2222";
+balance__money.textContent = "2,555.00 $";
 summary_LOGOUT.textContent = "00:00";
 
-const displayMovements = function (movements) {
-    movements.map(function (mov, i) {
+const displayMovements = function (movements, dates) {
+    movements.map(function (mov, index) {
         const status = mov < 0;
         const HTMLmovement = `
         <div class="box__cashMovement">
             <div class="box__status ${
                 status ? "box__status-withdraw" : "box__status-deposite"
             } ">${status ? "Withdraw" : "Deposite"}</div>
-            <div class="box__date">13/03/2020</div>
+            <div class="box__date">${dates[index]}</div>
             <div class="box__amount">${mov} $</div>
         </div>`;
         movements__box.innerHTML += HTMLmovement;
     });
+
+    // -Note- calc the IN & OUT summary
+    const positive__movements = movements
+        .filter((posMov) => posMov > 0)
+        .reduce((acc, cur) => acc + cur, 0);
+    const negative__movements = movements
+        .filter((posMov) => posMov < 0)
+        .reduce((acc, cur) => acc + cur, 0);
+    summary_IN.textContent = positive__movements;
+    summary_OUT.textContent = Math.abs(negative__movements);
+    summary_INTEREST.textContent = positive__movements + negative__movements;
 };
-displayMovements(account1.movements);
+// displayMovements(account1.movements, account1.date);
 
 accounts.map(
     (account) =>
@@ -94,31 +76,40 @@ accounts.map(
             .map((word) => word[0])
             .join("")),
 );
-// console.log(accounts);
 
 // HANDLE LOGIN
 const login = (username, pin) => {
     const selectedAccount = accounts.find(
         (curAccount) => curAccount.userName === username,
     );
+    console.log(selectedAccount.id);
 
-    selectedAccount?.pin === pin
-        ? ((welcomeEl.innerHTML = `<svg class="icon__bubble">
-                <use xlink:href="./SVGs/sprite.svg#icon-bubbles2"></use>
-            </svg>
-            <p>Welcome back, ${selectedAccount.owner.split(" ")[0]} .</p>`),
-          app__container.classList.add("show"))
-        : (welcomeEl.innerHTML = `<svg class="icon__bubble">
-                <use xlink:href="./SVGs/sprite.svg#icon-bubbles2"></use>
-            </svg>
-            <p>Username or Password is invalid .</p>`);
+    if (selectedAccount?.pin === pin) {
+        // نمایش موومنت‌ها بعد از لاگین موفق
+        // -Note- SHOWING THE UI
+        displayMovements(selectedAccount.movements, selectedAccount.date);
+
+        welcomeEl.innerHTML = `
+      <svg class="icon__bubble">
+        <use xlink:href="./SVGs/sprite.svg#icon-bubbles2"></use>
+      </svg>
+      <p>Welcome back, ${selectedAccount.owner.split(" ")[0]} .</p>`;
+
+        app__container.classList.add("show");
+    } else {
+        welcomeEl.innerHTML = `
+      <svg class="icon__bubble">
+        <use xlink:href="./SVGs/sprite.svg#icon-bubbles2"></use>
+      </svg>
+      <p>Username or Password is invalid .</p>`;
+    }
 };
 
 form__btn.addEventListener("click", (e) => {
     e.preventDefault();
-    console.log("click");
     const username__value = form__username.value;
     const pin__value = Number(form__pin.value);
+    // guard class
     if (!username__value || !pin__value) {
         form__username.classList.add("warning");
         form__pin.classList.add("warning");
