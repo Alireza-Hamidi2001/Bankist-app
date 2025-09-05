@@ -1,6 +1,7 @@
 // Data
 import { account1, account2, account3, account4 } from "./accounts.js";
 
+let currentAccount;
 const accounts = [account1, account2, account3, account4]; // [ { } , { }  , { }  ,{ } ]
 
 // // // // // ELEMENTS // // // // //
@@ -101,9 +102,10 @@ const summary__SECTION = function (movements) {
 
 // // // //  DISPALY__MOVEMENTS__section
 const display_Movements = function (movements, dates) {
+    movements__box.innerHTML = "";
     movements.map(function (mov, index) {
         const status = mov < 0;
-        const HTMLmovement = `  
+        const HTMLmovement = `
         <div class="box__cashMovement">
             <div class="box__status ${
                 status ? "box__status-withdraw" : "box__status-deposite"
@@ -136,6 +138,7 @@ const login_SECTION = (username, pin) => {
     );
 
     if (selectedAccount?.pin === pin) {
+        currentAccount = selectedAccount;
         // 01- show WELCOME
         welcome_SECTION(selectedAccount);
         // 02- show MOVEMENTS
@@ -172,35 +175,57 @@ form__btn.addEventListener("click", (e) => {
 // // // TRANSFER__section
 transfer__btn.addEventListener("click", (e) => {
     e.preventDefault();
+
     const balance__cur__acc = Number(balance__money.textContent.split(" ")[0]);
     const transfer__value = Number(transfer__amount.value);
+    console.log(currentAccount);
     const transfer__receiver = accounts.find(
         (account) =>
             account.owner.split(" ")[0].toLocaleLowerCase() ===
-            transfer__to.value,
+            transfer__to.value.trim(),
     );
     // // // GUARD__class
-    if (!transfer__value || !transfer__receiver) {
+    ////// 01 - WRONG__operation
+    if (!transfer__receiver && !transfer__value) {
         transfer__amount.classList.add("warning");
         transfer__to.classList.add("warning");
         setTimeout(() => {
             transfer__amount.classList.remove("warning");
             transfer__to.classList.remove("warning");
         }, 2000);
-    } else if (transfer__receiver && balance__cur__acc >= transfer__value) {
+    }
+    ////// 02 - WRONG__operation
+    else if (
+        transfer__receiver?.owner.split(" ")[0].toLocaleLowerCase() !==
+            transfer__to.value.toLocaleLowerCase().trim() ||
+        balance__cur__acc < transfer__value
+    ) {
         modalEl.innerHTML = `
         <p class="showModal">
-        &#10003; Transferred value ${transfer__value} to ${transfer__receiver.owner.split(" ")[0]}
-        </p>`;
-        MODAL__handler();
-        modalEl.classList.add("greenBg");
-    } else if (!transfer__receiver || balance__cur__acc < transfer__value) {
-        modalEl.innerHTML = `
-        <p class="showModal">
-        &#10007; Wrong the Receiver name or Value .
-        </p>`;
-        MODAL__handler();
+            Failed. account owner or value wrong !
+        </p>
+        `;
         modalEl.classList.add("redBg");
+        MODAL__handler();
+    }
+    ////// SUCCESSFUL__operation
+    else if (transfer__receiver && balance__cur__acc >= transfer__value) {
+        modalEl.innerHTML = `
+        <p class="showModal">
+            Succesfuly transfered <b><i> ${transfer__value} </i></b> to <b><i>${transfer__receiver.owner}</i></b>
+        </p>
+        `;
+        modalEl.classList.add("greenBg");
+        MODAL__handler();
+        const now = new Date().toLocaleDateString("en-GB");
+        currentAccount.movements.unshift(-transfer__value);
+        currentAccount.date.unshift(now);
+
+        transfer__receiver.movements.unshift(transfer__value);
+        transfer__receiver.date.unshift(now);
+
+        movements__box.innerHTML = "";
+        display_Movements(currentAccount.movements, currentAccount.date);
     }
     transfer__amount.value = "";
     transfer__to.value = "";

@@ -327,6 +327,8 @@ body {
 .showModal {
   display: block !important;
   animation: showModal 1s;
+  color: whitesmoke;
+  font-size: 2.5rem;
 }
 
 .greenBg {
