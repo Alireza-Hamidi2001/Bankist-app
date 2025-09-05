@@ -27,6 +27,12 @@
             background: #fff3b685;
             transition: all .2s;
 
+            @include mixin.respond(phone) {
+                width: 95%;
+                padding: 0.8rem;
+                font-size: 1rem;
+            }
+
             &:focus {
                 background: #fff3b6;
                 outline: none;
@@ -40,6 +46,10 @@
         font-weight: 300;
         margin-left: 1rem;
         color: rgb(141, 107, 19);
+
+        @include mixin.respond(phone) {
+            font-size: 1rem;
+        }
     }
 
     &__btn {

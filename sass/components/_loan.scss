@@ -1,3 +1,5 @@
+@use "../abstracts/mixin";
+
 .loan {
     &__heading {
         font-family: "Coiny";
@@ -25,6 +27,11 @@
             background: #aafee65b;
             transition: all .2s;
 
+            @include mixin.respond(phone) {
+                padding: 0.8rem;
+                font-size: 1rem;
+            }
+
             &:focus {
                 background: #aafee6;
                 outline: none;
@@ -39,6 +46,10 @@
         margin-top: 0.5rem;
         margin-left: 1rem;
         color: rgb(18, 52, 18);
+
+        @include mixin.respond(phone) {
+            font-size: 1rem;
+        }
     }
 
     &__btn {

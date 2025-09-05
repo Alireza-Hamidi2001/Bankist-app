@@ -465,6 +465,13 @@ body {
   background: rgba(255, 243, 182, 0.5215686275);
   transition: all 0.2s;
 }
+@media only screen and (max-width: 37.5em) {
+  .transfer__input input {
+    width: 95%;
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+}
 .transfer__input input:focus {
   background: #fff3b6;
   outline: none;
@@ -475,6 +482,11 @@ body {
   font-weight: 300;
   margin-left: 1rem;
   color: rgb(141, 107, 19);
+}
+@media only screen and (max-width: 37.5em) {
+  .transfer__paragraph {
+    font-size: 1rem;
+  }
 }
 .transfer__btn {
   background-color: transparent;
@@ -509,6 +521,12 @@ body {
   background: rgba(170, 254, 230, 0.3568627451);
   transition: all 0.2s;
 }
+@media only screen and (max-width: 37.5em) {
+  .loan__input input {
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+}
 .loan__input input:focus {
   background: #aafee6;
   outline: none;
@@ -520,6 +538,11 @@ body {
   margin-top: 0.5rem;
   margin-left: 1rem;
   color: rgb(18, 52, 18);
+}
+@media only screen and (max-width: 37.5em) {
+  .loan__paragraph {
+    font-size: 1rem;
+  }
 }
 .loan__btn {
   background-color: transparent;
@@ -554,6 +577,13 @@ body {
   background: rgba(255, 166, 178, 0.5725490196);
   transition: all 0.2s;
 }
+@media only screen and (max-width: 37.5em) {
+  .close__input input {
+    width: 95%;
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+}
 .close__input input:focus {
   background: #ffa6b2;
   outline: none;
@@ -565,6 +595,11 @@ body {
   margin-top: 0.5rem;
   margin-left: 1rem;
   color: #700000;
+}
+@media only screen and (max-width: 37.5em) {
+  .close__paragraph {
+    font-size: 1rem;
+  }
 }
 .close__btn {
   background-color: transparent;
