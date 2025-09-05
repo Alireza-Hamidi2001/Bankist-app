@@ -18,7 +18,7 @@ const transfer__to = document.querySelector(".transfer__input-to");
 const transfer__amount = document.querySelector(".transfer__input-amount");
 const transfer__btn = document.querySelector(".transfer__btn");
 // LOAN
-const loan__to = document.querySelector(".loan__input-to");
+const loan__amount = document.querySelector(".loan__input-amount");
 const loan__btn = document.querySelector(".loan__btn");
 // CLOSE
 const close__user = document.querySelector(".close__input-user");
@@ -171,7 +171,7 @@ form__btn.addEventListener("click", (e) => {
     }
 });
 
-// // // // // // // // -SECTION-
+// -SECTION-
 // // // TRANSFER__section
 transfer__btn.addEventListener("click", (e) => {
     e.preventDefault();
@@ -231,5 +231,69 @@ transfer__btn.addEventListener("click", (e) => {
     transfer__to.value = "";
 });
 
-// console.log(transfer__value, transfer__receiver);
-// console.log(transfer__receiver.owner.split(" ")[0]);
+// -SECTION-
+loan__btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const now = new Date().toLocaleDateString("en-GB");
+    const loan = Number(loan__amount.value);
+    currentAccount.movements.unshift(loan);
+    currentAccount.date.unshift(now);
+    movements__box.innerHTML = "";
+    display_Movements(currentAccount.movements, currentAccount.date);
+    loan__amount.value = "";
+});
+
+// -SECTION-
+close__btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const currentAccount__owner = currentAccount.owner
+        .split(" ")[0]
+        .toLocaleLowerCase();
+    const input__owner = close__user.value.toLocaleLowerCase().trim();
+
+    const currentAccount__pin = Number(currentAccount.pin);
+    const input__pin = Number(close__pin.value);
+
+    // console.log(currentAccount__owner === input__owner);
+    // console.log(currentAccount__pin === input__pin);
+
+    if (!input__owner && !input__pin) {
+        close__user.classList.add("warning");
+        close__pin.classList.add("warning");
+        setTimeout(() => {
+            close__user.classList.remove("warning");
+            close__pin.classList.remove("warning");
+        }, 2000);
+    } else if (
+        currentAccount__owner === input__owner &&
+        currentAccount__pin === input__pin
+    ) {
+        welcomeEl.innerHTML = `
+        <div>
+        <svg class="icon__bubble">
+        <use xlink:href="./SVGs/sprite.svg#icon-bubbles2"></use>
+        </svg>
+        <div class="welcome__animation">
+        Hey there. Welcome to bankist project, log in first.
+        </div>
+    </div>
+    <div class="guides">
+        <p class="guide">user: js , pin: 1111</p>
+        <p class="guide">user: ah , pin: 2222</p>
+        <p class="guide">user: fh , pin: 3333</p>
+        <p class="guide">user: ss , pin: 4444</p>
+    </div>
+        `;
+        app__container.classList.remove("show");
+    } else {
+        modalEl.innerHTML = `
+        <p class="showModal">
+            Failed. account owner or pin wrong !
+        </p>
+        `;
+        modalEl.classList.add("redBg");
+        MODAL__handler();
+    }
+    close__user.value = "";
+    close__pin.value = "";
+});
