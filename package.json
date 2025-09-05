@@ -11,5 +11,9 @@
     "license": "ISC",
     "dependencies": {
         "sass": "^1.90.0"
+    },
+    "devDependencies": {
+        "eslint": "^9.34.0",
+        "prettier": "^3.6.2"
     }
 }

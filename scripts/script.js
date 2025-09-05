@@ -77,6 +77,7 @@ accounts.map(
             .join("")),
 );
 
+/////////////////////////////////////// -SECTION-
 // HANDLE LOGIN
 const login = (username, pin) => {
     const selectedAccount = accounts.find(
@@ -90,18 +91,18 @@ const login = (username, pin) => {
         displayMovements(selectedAccount.movements, selectedAccount.date);
 
         welcomeEl.innerHTML = `
-      <svg class="icon__bubble">
+        <svg class="icon__bubble">
         <use xlink:href="./SVGs/sprite.svg#icon-bubbles2"></use>
-      </svg>
-      <p>Welcome back, ${selectedAccount.owner.split(" ")[0]} .</p>`;
+        </svg>
+        <p>Welcome back, ${selectedAccount.owner.split(" ")[0]} .</p>`;
 
         app__container.classList.add("show");
     } else {
         welcomeEl.innerHTML = `
-      <svg class="icon__bubble">
+        <svg class="icon__bubble">
         <use xlink:href="./SVGs/sprite.svg#icon-bubbles2"></use>
-      </svg>
-      <p>Username or Password is invalid .</p>`;
+        </svg>
+        <p>Username or Password is invalid .</p>`;
     }
 };
 
